@@ -17,7 +17,7 @@ class JSONResponse(HttpResponse):
         super(JSONResponse, self).__init__(content, **kwargs)
 
 @csrf_exempt
-def snippet_list(self, request):
+def snippet_list(request):
 
     """
     List all code snippets, or create a new snippet.
@@ -36,7 +36,7 @@ def snippet_list(self, request):
         return JSONResponse(serializer.errors, status=404)
 
 @csrf_exempt
-def snippet_detail(self, request, pk):
+def snippet_detail(request, pk):
     """
     Retrieve, update or delete a code snippet.
     """
